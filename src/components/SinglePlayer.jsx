@@ -1,3 +1,5 @@
+import NavBar from './NavBar.jsx';
+
 function SinglePlayer() {
 
   return (

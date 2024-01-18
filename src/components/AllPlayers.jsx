@@ -1,10 +1,11 @@
 import {useState} from 'react';
+import NavBar from './NavBar.jsx';
 
 function AllPlayers(){
 
   const [players, setPlayers] = useState([]);
 
-  
+
 
   return (
     <>
