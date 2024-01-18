@@ -1,13 +1,14 @@
-import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom';
 
-function NavBar() {
+function NavBar(){
 
   return (
     <>
       <NavLink to='/'>Home</NavLink>
       <NavLink to='/players'>Players</NavLink>
+      <NavLink to='/players/:id'>Player Details</NavLink>
     </>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

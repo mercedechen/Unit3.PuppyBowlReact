@@ -1,11 +1,10 @@
 import './App.css'
 import {Routes, Route} from 'react-router-dom'
-import NavBar from './components/NavBar.jsx'
-import AllPlayers from './components/AllPlayers.jsx'
-import SinglePlayer from './components/SinglePlayer.jsx'
+import NavBar from './components/NavBar.jsx';
+import AllPlayers from './components/AllPlayers.jsx';
+import SinglePlayer from './components/SinglePlayer.jsx';
 
-function App() {
-
+function App(){
   return (
     <>
       <Routes>
@@ -17,4 +16,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
