@@ -2,9 +2,9 @@ function AllPlayers() {
 
   return (
     <>
-      This is the all players component
+      <h2>This is the all players component</h2>
     </>
   )
-}
+};
 
-export default AllPlayers
+export default AllPlayers;

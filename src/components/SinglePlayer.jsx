@@ -2,9 +2,9 @@ function SinglePlayer() {
 
   return (
     <>
-      This is the single player component
+      <h2>This is the single player component</h2>
     </>
   )
-}
+};
 
-export default SinglePlayer
+export default SinglePlayer;
