@@ -1,7 +1,8 @@
+// Import root source files
 import App from './App.jsx'
 import './index.css'
 
-// react
+// Import React libraries
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {BrowserRouter} from 'react-router-dom'

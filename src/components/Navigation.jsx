@@ -1,15 +1,14 @@
-// react
+// Import React libraries
 import {NavLink} from 'react-router-dom';
 
-function NavBar(){
-
+function Navigation(){
   return (
     <nav>
-      <NavLink to='/'>Home</NavLink>
+      <h1>Puppy Bowl React</h1>
       <NavLink to='/players'>Players</NavLink>
       <NavLink to='/players/:id'>Player Details</NavLink>
     </nav>
   );
 };
 
-export default NavBar;
+export default Navigation;

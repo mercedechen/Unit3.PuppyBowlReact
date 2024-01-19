@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 
 const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-PT-SF-B-mercede/players"
 
-function AllPlayers() {
+function Players() {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
@@ -22,20 +22,22 @@ function AllPlayers() {
 
   return (
     <>
-      {
-        players.map((player, id) => {
-          return (
-            <div key={id} className="card">
-              <h4>{player.name}</h4>
-              <p>{player.breed}</p>
-              <p>{player.status}</p>
-              <img src={player.imageUrl} alt={player.imageUrl}/>
-            </div>
-          )
-        })
-      }
+      <div className='card'>
+        {
+          players.map((player, id) => {
+            return (
+              <div key={id} className="player-card">
+                <img src={player.imageUrl} alt={player.imageUrl}/>
+                <h4>{player.name}</h4>
+                <p>{player.breed}</p>
+                <p>{player.status}</p>
+              </div>
+            )
+          })
+        }
+      </div>
     </>
   );
 };
 
-export default AllPlayers;
+export default Players;

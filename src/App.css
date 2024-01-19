@@ -5,18 +5,24 @@
   text-align: center;
 }
 
-h1 {
-  margin: 0 auto 20px 0;
+nav {
+  margin-bottom: 50px;
 }
 
-a:hover {
-  font-weight: 600;
+nav h1 {
+  margin: 20px auto 15px auto ;
 }
 
 .card {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.player-card {
+  display: flex;
   flex-direction: column;
   width: 300px;
+  margin: 10px;
 }
 
 h4, p {
