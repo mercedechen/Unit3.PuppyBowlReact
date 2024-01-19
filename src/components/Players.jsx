@@ -1,6 +1,6 @@
 // Import React libraries
 import {useState, useEffect} from 'react';
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-PT-SF-B-mercede/players"
 

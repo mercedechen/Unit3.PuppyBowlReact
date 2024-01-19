@@ -1,7 +1,13 @@
 // Import React libraries
-import { useNavigate } from "react-router-dom";
+import {useParams} from "react-router-dom";
+
+// Import player data
+import players from './Players.jsx';
 
 function PlayerDetails() {
+  const {playerId} = useParams();
+
+  // const player = players.find((player) => player.id === parseInt(playerId));
 
   return (
     <>
