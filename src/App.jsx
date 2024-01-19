@@ -8,7 +8,7 @@ import {Routes, Route} from 'react-router-dom'
 import Navigation from './components/Navigation.jsx';
 // import NewPlayerForm from './components/NewPlayerForm.jsx';
 import Players from './components/Players.jsx';
-import SinglePlayer from './components/SinglePlayer.jsx';
+import PlayerDetails from './components/PlayerDetails.jsx';
 
 function App(){
   return (
@@ -16,7 +16,7 @@ function App(){
       <Navigation />
       <Routes>
         <Route path='/players' element={<Players />} />
-        <Route path='/players/:id' element={<SinglePlayer />} />
+        <Route path='/players/:id' element={<PlayerDetails />} />
       </Routes>
     </>
   )
