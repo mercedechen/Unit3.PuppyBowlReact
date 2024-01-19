@@ -4,6 +4,7 @@ import './App.css'
 import {Routes, Route} from 'react-router-dom'
 
 // components
+import Home from './components/Home.jsx';
 import NavBar from './components/NavBar.jsx';
 import AllPlayers from './components/AllPlayers.jsx';
 import SinglePlayer from './components/SinglePlayer.jsx';
@@ -17,6 +18,7 @@ function App(){
         <NavBar />
       </nav>
       <Routes>
+        <Route path='/' element={<Home />} />
         <Route path='/players' element={<AllPlayers />} />
         <Route path='/players/:id' element={<SinglePlayer />} />
       </Routes>
