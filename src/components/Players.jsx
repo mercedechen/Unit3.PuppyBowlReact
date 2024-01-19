@@ -31,6 +31,7 @@ function Players() {
               <div key={id} className="player-card">
                 <img src={player.imageUrl} alt={player.imageUrl}/>
                 <button onClick={() => {navigate(`/players/${player.id}`)}}>Player Details</button>
+                <button>Delete</button>
                 <h4>{player.name}</h4>
                 <p>{player.breed}</p>
                 <p>{player.status}</p>
