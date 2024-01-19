@@ -22,56 +22,20 @@ function AllPlayers() {
 
   return (
     <>
-      {Array.isArray(players) && players.length > 0 ? (
-        players.map((player, id) => (
-          <ul key={id} className="card">
-            <li><img src={player.imageUrl}></img></li>
-            <li>{player.name}</li>
-            <li>{player.breed}</li>
-            <li>{player.status}</li>
-          </ul>
-        ))
-      ) : (
-        <p>No player data available</p>
-      )}
+      {
+        players.map((player, id) => {
+          return (
+            <div key={id} className="card">
+              <h4>{player.name}</h4>
+              <p>{player.breed}</p>
+              <p>{player.status}</p>
+              <img src={player.imageUrl} alt={player.imageUrl}/>
+            </div>
+          )
+        })
+      }
     </>
-  )
-}
-
-// import { useGetPlayersQuery, useDeletePlayerMutation } from "../redux/api.js";
-
-// function AllPlayers(){
-//   const { data, error, loading } = useGetPlayersQuery();
-
-//   const [ deletePlayer ] = useDeletePlayerMutation();
-
-//   function handleDelete(player) {
-//     deletePlayer(player.id)
-//   }
-
-//   return (
-//     <>
-//       <h2>all players component</h2>
-//       <div>
-//         {error ? <div>Error</div> : <div></div>}
-//         {loading ? <div>Loading</div> :
-//         <ul>
-//           {data?.data.players.map((player)=> {
-//             return (
-//               <li className="card" key={player.id}>
-//                 <p><strong>Name: </strong>{player.name}</p>
-//                 <p><strong>Breed: </strong>{player.breed}</p>
-//                 <p><strong>Status: </strong>{player.status}</p>
-//                 <p><strong>Image: </strong>{player.image}</p>
-//                 <button onClick={() => handleDelete(player)}>Delete</button>
-//               </li>
-//             )
-//           })}
-//         </ul>
-//         }
-//       </div>
-//     </>
-//   )
-// }
+  );
+};
 
 export default AllPlayers;
