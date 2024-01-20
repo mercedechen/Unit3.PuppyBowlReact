@@ -34,7 +34,7 @@ img {
   margin: 0 10px 50px 10px;
 }
 
-.player-form {
+.player-form, .player-search {
   text-align: left;
   width: 200px;
 }
