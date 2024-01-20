@@ -20,7 +20,7 @@ function Players() {
       try {
         const response = await fetch(`${API_URL}/players`);
         const json = await response.json();
-        console.log(json.data.players);
+        // console.log(json.data.players);
         setPlayers(json.data.players);
       } catch (error) {
         console.error('Error fetching player data: ', error);

@@ -8,6 +8,7 @@ function NewPlayerForm() {
   const [breed, setBreed] = useState('');
   const [status, setStatus] = useState('bench');
   const [imageUrl, setImageUrl] = useState('');
+  const [teamId, setTeamId] = useState('');
 
   async function handleSubmit(event) {
     // Stops the page from reloading
@@ -22,7 +23,8 @@ function NewPlayerForm() {
           name,
           breed,
           status,
-          imageUrl
+          imageUrl,
+          teamId
         })
       })
     } catch (error) {
@@ -33,6 +35,7 @@ function NewPlayerForm() {
     setName('');
     setBreed('');
     setImageUrl('');
+    setTeamId('');
   }
 
   return (
@@ -60,6 +63,11 @@ function NewPlayerForm() {
         {/* Update setImageUrl with the input text */}
         <label>Image Url
           <input type='text' value={imageUrl} onChange={event => setImageUrl(event.target.value)}/>
+        </label>
+
+        {/* Update setTeamId with the input text */}
+        <label>Team
+          <input type='text' value={teamId} onChange={event => setTeamId(event.target.value)}/>
         </label>
 
         <button type="submit">Sign Up</button>
