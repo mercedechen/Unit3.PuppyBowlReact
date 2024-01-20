@@ -5,20 +5,12 @@
   text-align: center;
 }
 
-nav {
-  margin-bottom: 50px;
-}
-
-nav h1 {
-  margin: 20px auto 15px auto ;
-}
-
 .content {
   display: flex;
   flex-direction: row-reverse;
 }
 
-.card {
+.container {
   display: flex;
   flex-wrap: wrap;
 }
@@ -26,25 +18,28 @@ nav h1 {
 .player-card {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 200px;
   margin: 10px;
-}
-
-img {
-  width: 100%;
 }
 
 .player-form {
   display: flex;
   flex-direction: column;
   text-align: left;
+  width: 200px;
 }
 
-h2 {
+h2, h3{
   text-align: center;
 }
 
+h3 {
+  100%
+}
+
 label {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 

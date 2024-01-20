@@ -16,28 +16,27 @@ function Players() {
         // console.log(json.data.players);
         setPlayers(json.data.players);
       } catch (error) {
-        console.log(error);
+        console.error('Error fetching player data: ', error);
       }
     }
     getPlayers();
-  }, [players]);
+  }, []);
 
   return (
     <>
-      <div className='card'>
+      <div className='container'>
         {
+          players.length ?
           players.map((player, id) => {
             return (
               <div key={id} className="player-card">
+                <h4>{player.name}</h4>
                 <img src={player.imageUrl} alt={player.imageUrl}/>
                 <button onClick={() => {navigate(`/players/${player.id}`)}}>Player Details</button>
-                <button>Delete</button>
-                <h4>{player.name}</h4>
-                <p>{player.breed}</p>
-                <p>{player.status}</p>
+                <button>Remove</button>
               </div>
             )
-          })
+          }) : <h2>Loading...</h2>
         }
       </div>    
     </>

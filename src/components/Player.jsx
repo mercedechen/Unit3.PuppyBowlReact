@@ -1,12 +1,11 @@
 // Import React libraries
 import {useParams} from "react-router-dom";
 
-function Player({imageUrl, name, breed, status}) {
-  const {id} = useParams();
+function Player() {
 
   return (
     <>
-      <h2>single player component</h2>
+      <h3>single player component</h3>
     </>
   )
 };
