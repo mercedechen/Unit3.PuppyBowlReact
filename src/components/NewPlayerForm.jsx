@@ -22,8 +22,6 @@ function NewPlayerForm() {
         imageUrl
       })
     })
-    // const json = await response.json();
-    // console.log(json);
 
     // Changes state variable to null or empty
     setName('');
@@ -40,12 +38,12 @@ function NewPlayerForm() {
           <input type='text' value={name} onChange={event => setName(event.target.value)}/>
         </label>
 
-        {/* Update setName with the input text, clears value after submit */}
+        {/* Update setBreed with the input text, clears value after submit */}
         <label>Breed
           <input type='text' value={breed} onChange={event => setBreed(event.target.value)}/>
         </label>
 
-        {/* Update setName with the input text, clears value after submit */}
+        {/* Update setImageUrl with the input text, clears value after submit */}
         <label>Image Url
           <input type='text' value={imageUrl} onChange={event => setImageUrl(event.target.value)}/>
         </label>
