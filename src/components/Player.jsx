@@ -1,4 +1,4 @@
-// Import React libraries
+// import React libraries
 import {useState, useEffect} from 'react';
 import {useParams, Link} from 'react-router-dom';
 
@@ -20,7 +20,7 @@ function Player() {
     try {
       const response = await fetch(`${API_URL}/players/${id}`);
       const json = await response.json();
-      // console.log(json.data.player);
+      console.log(json.data.player);
       setPlayer(json.data.player);
     } catch (error) {
       console.error('Error getting player details: ', error);
@@ -30,19 +30,23 @@ function Player() {
   return (
     <div className="player-profile">
       <img src={player.imageUrl}/>
-      {
-        player.id ?
-        <div className="player-details">
-          <p>Name: {player.name}</p>
-          <p>ID: {player.id}</p>
-          <p>Breed: {player.breed}</p>
-          <p>Status: {player.status}</p>
-          <p>Team: {player.teamId}</p>
-          <Link to='/'>Go Back</Link>
-        </div>
-        :
-        <h4>Player cannot be found</h4>
-      }
+      <div className="player-panel">
+        {
+          player.id ?
+          <div className="player-details">
+            <p>Name: {player.name}</p>
+            <p>ID: {player.id}</p>
+            <p>Breed: {player.breed}</p>
+            <p>Status: {player.status}</p>
+            <p>Team: {player.teamId}</p>
+        
+          </div>
+          :
+          <h4>Player cannot be found</h4>
+        }
+
+        <Link to='/'>Go Back</Link>
+      </div>
     </div>
   )
 };

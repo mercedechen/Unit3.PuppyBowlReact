@@ -29,6 +29,21 @@ function Players() {
     getPlayers();
   }, []);
 
+  const removePlayer = async (id) => {
+    try {
+      const response = await fetch(`${API_URL}/players/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        console.error('Error removing player');
+      }
+
+    } catch (error) {
+      console.error('Error encountered, player was not removed: ', error);
+    }
+  }
+
   return (
     <div className='player-container'>
       
@@ -41,7 +56,7 @@ function Players() {
                 <h4>{player.name}</h4>
                 <img src={player.imageUrl} alt={player.imageUrl}/>
                 <button onClick={() => {navigate(`/players/${player.id}`)}}>Details</button>
-                <button>Remove</button>
+                <button onClick={() => removePlayer(player.id)}>Remove</button>
               </div>
             )
           }) : <h4>Loading...</h4>
