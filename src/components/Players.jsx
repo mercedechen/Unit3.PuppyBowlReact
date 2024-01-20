@@ -27,7 +27,7 @@ function Players() {
       }
     }
     getPlayers();
-  }, []);
+  }, [players]);
 
   const removePlayer = async (id) => {
     try {
