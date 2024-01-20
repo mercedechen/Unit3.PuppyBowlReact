@@ -7,10 +7,6 @@ function Player({imageUrl, name, breed, status}) {
   return (
     <>
       <h2>single player component</h2>
-      <img src={imageUrl} alt={imageUrl}/>
-      <h4>{name}</h4>
-      <p>{breed}</p>
-      <p>{status}</p>
     </>
   )
 };

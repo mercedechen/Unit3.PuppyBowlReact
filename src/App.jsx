@@ -5,7 +5,6 @@ import './App.css'
 import {Routes, Route} from 'react-router-dom'
 
 // Import components
-import Navigation from './components/Navigation.jsx';
 import NewPlayerForm from './components/NewPlayerForm.jsx';
 import Players from './components/Players.jsx';
 import Player from './components/Player.jsx';
@@ -13,13 +12,15 @@ import Player from './components/Player.jsx';
 function App(){
   return (
     <>
-      <Navigation />
-      <NewPlayerForm />
-      
-      <Routes>
-        <Route path='/players' element={<Players />} />
-        <Route path='/players/:id' element={<Player />} />
-      </Routes>
+      <h1>Puppy Bowl React</h1>
+
+      <div className="content">
+        <NewPlayerForm />
+        <Routes>
+          <Route path='/' element={<Players/>} />
+          <Route path='/players/:id' element={<Player />} />
+        </Routes>
+      </div>
     </>
   )
 }

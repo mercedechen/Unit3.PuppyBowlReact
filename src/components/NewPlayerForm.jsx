@@ -33,19 +33,22 @@ function NewPlayerForm() {
 
   return (
     <>
-      <h4>Registration</h4>
       <form className="player-form" onSubmit={handleSubmit}>
+        <h2>Registration</h2>
         {/* Update setName with the input text, clears value after submit */}
-        <label>Name</label>
-        <input type='text' value={name} onChange={event => setName(event.target.value)}/>
+        <label>Name
+          <input type='text' value={name} onChange={event => setName(event.target.value)}/>
+        </label>
 
         {/* Update setName with the input text, clears value after submit */}
-        <label>Breed</label>
-        <input type='text' value={breed} onChange={event => setBreed(event.target.value)}/>
+        <label>Breed
+          <input type='text' value={breed} onChange={event => setBreed(event.target.value)}/>
+        </label>
 
         {/* Update setName with the input text, clears value after submit */}
-        <label>Image Url</label>
-        <input type='text' value={imageUrl} onChange={event => setImageUrl(event.target.value)}/>
+        <label>Image Url
+          <input type='text' value={imageUrl} onChange={event => setImageUrl(event.target.value)}/>
+        </label>
 
         <button type="submit">Sign Up</button>
       </form>

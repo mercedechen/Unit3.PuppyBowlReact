@@ -13,6 +13,11 @@ nav h1 {
   margin: 20px auto 15px auto ;
 }
 
+.content {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .card {
   display: flex;
   flex-wrap: wrap;
@@ -25,19 +30,27 @@ nav h1 {
   margin: 10px;
 }
 
-h4, p {
-  margin: 0;
-}
-
 img {
   width: 100%;
 }
 
-input {
-  margin-right: 20px;
-  width: 100px;
+.player-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+h2 {
+  text-align: center;
 }
 
 label {
-  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  border: none;
+  background-color: lightgray;
+  height: 25px;
+  border-radius: 8px;
 }
