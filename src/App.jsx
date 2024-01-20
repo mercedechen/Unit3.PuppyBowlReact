@@ -8,16 +8,17 @@ import {Routes, Route} from 'react-router-dom'
 import Navigation from './components/Navigation.jsx';
 import NewPlayerForm from './components/NewPlayerForm.jsx';
 import Players from './components/Players.jsx';
-import PlayerDetails from './components/PlayerDetails.jsx';
+import Player from './components/Player.jsx';
 
 function App(){
   return (
     <>
       <Navigation />
       <NewPlayerForm />
+      
       <Routes>
         <Route path='/players' element={<Players />} />
-        <Route path='/players/:id' element={<PlayerDetails />} />
+        <Route path='/players/:id' element={<Player />} />
       </Routes>
     </>
   )

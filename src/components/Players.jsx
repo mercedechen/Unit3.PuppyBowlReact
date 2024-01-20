@@ -2,7 +2,7 @@
 import {useState, useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
 
-const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-PT-SF-B-mercede/players"
+const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-PT-SF-B-mercede";
 
 function Players() {
   const [players, setPlayers] = useState([]);
@@ -11,16 +11,16 @@ function Players() {
   useEffect(() => {
     const getPlayers = async () => {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(`${API_URL}/players`);
         const json = await response.json();
-        console.log(json.data);
+        // console.log(json.data.players);
         setPlayers(json.data.players);
       } catch (error) {
         console.log(error);
       }
     }
     getPlayers();
-  }, []);
+  }, [players]);
 
   return (
     <>
@@ -39,7 +39,7 @@ function Players() {
             )
           })
         }
-      </div>
+      </div>    
     </>
   );
 };
