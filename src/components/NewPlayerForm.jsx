@@ -6,6 +6,7 @@ function NewPlayerForm() {
 
   const [name, setName] = useState('');
   const [breed, setBreed] = useState('');
+  const [status, setStatus] = useState('bench');
   const [imageUrl, setImageUrl] = useState('');
 
   async function handleSubmit(event) {
@@ -19,6 +20,7 @@ function NewPlayerForm() {
       body: JSON.stringify({
         name,
         breed,
+        status,
         imageUrl
       })
     })
@@ -33,17 +35,25 @@ function NewPlayerForm() {
     <>
       <form className="player-form" onSubmit={handleSubmit}>
         <h2>Registration</h2>
-        {/* Update setName with the input text, clears value after submit */}
+        {/* Update setName with the input text */}
         <label>Name
           <input type='text' value={name} onChange={event => setName(event.target.value)}/>
         </label>
 
-        {/* Update setBreed with the input text, clears value after submit */}
+        {/* Update setBreed with the input text */}
         <label>Breed
           <input type='text' value={breed} onChange={event => setBreed(event.target.value)}/>
         </label>
 
-        {/* Update setImageUrl with the input text, clears value after submit */}
+        {/* Update setStatus with the selected option */}
+        <label>Status
+          <select id="status" onChange={event => setStatus(event.target.value)}>
+            <option value="bench">Bench</option>
+            <option value="field">Field</option>
+          </select>
+        </label>   
+
+        {/* Update setImageUrl with the input text */}
         <label>Image Url
           <input type='text' value={imageUrl} onChange={event => setImageUrl(event.target.value)}/>
         </label>

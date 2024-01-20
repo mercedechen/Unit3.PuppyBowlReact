@@ -11,6 +11,7 @@ const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-PT-SF-
 
 // fetch player data from API
 function Players() {
+  
   const [players, setPlayers] = useState([]);
   const navigate = useNavigate();
 
