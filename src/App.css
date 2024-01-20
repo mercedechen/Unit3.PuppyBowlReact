@@ -7,39 +7,47 @@
 
 .content {
   display: flex;
-  flex-direction: row-reverse;
+  margin-top: 50px;
 }
 
-.container {
+img {
+  width: 100%;
+}
+
+/* style for all players page */
+.player-container {
+  display: flex;
+}
+
+.player-cards {
   display: flex;
   flex-wrap: wrap;
 }
 
-.player-card {
+.player-card, .player-form, label {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  margin: 10px;
+}
+
+.player-card {
+  width: 150px;
+  margin: 0 10px 50px 10px;
 }
 
 .player-form {
-  display: flex;
-  flex-direction: column;
   text-align: left;
   width: 200px;
 }
 
-h2, h3{
+h2 {
   text-align: center;
 }
 
-h3 {
-  100%
+h4 {
+  margin: 0;
 }
 
 label {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 10px;
 }
 
@@ -47,5 +55,23 @@ input {
   border: none;
   background-color: lightgray;
   height: 25px;
-  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+/* styles for single player view*/
+.player-profile {
+  display: flex;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.player-profile img {
+  width: 500px;
+}
+
+.player-details {
+  margin: 0 40px;
 }

@@ -1,9 +1,14 @@
-// Import React libraries
+// import React libraries
 import {useState, useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
 
+// import source files
+import NewPlayerForm from './NewPlayerForm.jsx';
+
+// API
 const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-PT-SF-B-mercede";
 
+// fetch player data from API
 function Players() {
   const [players, setPlayers] = useState([]);
   const navigate = useNavigate();
@@ -23,8 +28,8 @@ function Players() {
   }, []);
 
   return (
-    <>
-      <div className='container'>
+    <div className='player-container'>
+      <div className="player-cards">
         {
           players.length ?
           players.map((player, id) => {
@@ -36,10 +41,12 @@ function Players() {
                 <button>Remove</button>
               </div>
             )
-          }) : <h2>Loading...</h2>
+          }) : <h4>Loading...</h4>
         }
-      </div>    
-    </>
+      </div>
+      
+      <NewPlayerForm />
+    </div>    
   );
 };
 
