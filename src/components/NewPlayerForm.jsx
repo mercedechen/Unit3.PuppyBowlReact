@@ -11,7 +11,7 @@ function NewPlayerForm() {
   async function handleSubmit(event) {
     // Stops the page from reloading
     event.preventDefault();
-    let response = await fetch(`${API_URL}/players`, {
+    const response = await fetch(`${API_URL}/players`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -22,25 +22,30 @@ function NewPlayerForm() {
         imageUrl
       })
     })
-    let json = await response.json();
-    console.log(json);
+    // const json = await response.json();
+    // console.log(json);
+
+    // Changes state variable to null or empty
+    setName('');
+    setBreed('');
+    setImageUrl('');
   }
 
   return (
     <>
       <h4>Registration</h4>
-      <form method="post" className="player-form" onSubmit={handleSubmit}>
-        {/* Update setName with the input text */}
+      <form className="player-form" onSubmit={handleSubmit}>
+        {/* Update setName with the input text, clears value after submit */}
         <label>Name</label>
-        <input type='text' onChange={event => setName(event.target.value)}/>
+        <input type='text' value={name} onChange={event => setName(event.target.value)}/>
 
-        {/* Update setBreed with the input text */}
+        {/* Update setName with the input text, clears value after submit */}
         <label>Breed</label>
-        <input type='text' onChange={event => setBreed(event.target.value)}/>
+        <input type='text' value={breed} onChange={event => setBreed(event.target.value)}/>
 
-        {/* Update setImageUrl with the input text */}
+        {/* Update setName with the input text, clears value after submit */}
         <label>Image Url</label>
-        <input type='text' onChange={event => setImageUrl(event.target.value)}/>
+        <input type='text' value={imageUrl} onChange={event => setImageUrl(event.target.value)}/>
 
         <button type="submit">Sign Up</button>
       </form>
