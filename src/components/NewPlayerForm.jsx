@@ -12,18 +12,22 @@ function NewPlayerForm() {
   async function handleSubmit(event) {
     // Stops the page from reloading
     event.preventDefault();
-    const response = await fetch(`${API_URL}/players`, {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        breed,
-        status,
-        imageUrl
+    try {
+      const response = await fetch(`${API_URL}/players`, {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          breed,
+          status,
+          imageUrl
+        })
       })
-    })
+    } catch (error) {
+      console.error('Failed to register: ', error);
+    }
 
     // Changes state variable to null or empty
     setName('');

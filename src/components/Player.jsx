@@ -37,6 +37,7 @@ function Player() {
           <p>ID: {player.id}</p>
           <p>Breed: {player.breed}</p>
           <p>Status: {player.status}</p>
+          <p>Team: {player.teamId}</p>
           <Link to='/'>Go Back</Link>
         </div>
         :
