@@ -44,7 +44,9 @@ function Player() {
           <h4>Player cannot be found</h4>
         }
 
-        <Link to='/'>Go Back</Link>
+        <button>
+          <Link to='/'>Go Back</Link>
+        </button>
       </div>
     </div>
   )
