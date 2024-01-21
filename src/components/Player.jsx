@@ -13,19 +13,18 @@ function Player() {
   const {id} = useParams()
 
   useEffect(() => {
-    getPlayer()
-  }, []);
-
-  async function getPlayer() {
-    try {
-      const response = await fetch(`${API_URL}/players/${id}`);
-      const json = await response.json();
-      // console.log(json.data.player);
-      setPlayer(json.data.player);
-    } catch (error) {
-      console.error('Error getting player details: ', error);
+    async function getPlayer() {
+      try {
+        const response = await fetch(`${API_URL}/players/${id}`);
+        const json = await response.json();
+        // console.log(json.data.player);
+        setPlayer(json.data.player);
+      } catch (error) {
+        console.error('Error getting player details: ', error);
+      };
     };
-  };
+    getPlayer();
+  }, []);
 
   return (
     <div className="player-profile">
