@@ -1,16 +1,21 @@
-// import React libraries
-import {useState, useEffect} from 'react';
+function SearchPlayer({players, setFilteredPlayers}) {
 
-// API
-const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-PT-SF-B-mercede";
 
-function SearchPlayer() {
+    const filterPlayers = (searchValue) => {
+      if (!searchValue) {setFilteredPlayers([])} else {
+      const filteredPlayers = players.filter((player) => {
+        return (
+          player.name.toLowerCase().includes(searchValue.toLowerCase())
+        )
+      })
+      setFilteredPlayers(filteredPlayers)}
+    }
 
   return (
     <div className="player-search">
       <form>
         <label>Search:
-          <input type="text" placeholder="Search for a player..." />
+          <input type="text" placeholder="Search for a player..." onChange={(event) => filterPlayers(event.target.value)}/>
         </label>
       </form>
     </div>

@@ -13,6 +13,7 @@ const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-PT-SF-
 function Players() {
   
   const [players, setPlayers] = useState([]);
+  const [filteredPlayers, setFilteredPlayers] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +21,6 @@ function Players() {
       try {
         const response = await fetch(`${API_URL}/players`);
         const json = await response.json();
-        // console.log(json.data.players);
         setPlayers(json.data.players);
       } catch (error) {
         console.error('Error fetching player data: ', error);
@@ -45,11 +45,20 @@ function Players() {
   }
 
   return (
-    <div className='player-container'>
-      
-      <div className="player-cards">
+    <div className='container'>
+      <div className="players">
         {
-          players.length ?
+          players.length ? 
+          (filteredPlayers.length) ?
+          filteredPlayers.map((player, id) => {
+            return (
+              <div key={id} className="player-card">
+                <h4>{player.name}</h4>
+                <img src={player.imageUrl} alt={player.imageUrl}/>
+                <button onClick={() => {navigate(`/players/${player.id}`)}}>Details</button>
+                <button onClick={() => removePlayer(player.id)}>Remove</button>
+              </div>
+            )}) :
           players.map((player, id) => {
             return (
               <div key={id} className="player-card">
@@ -62,9 +71,9 @@ function Players() {
           }) : <h4>Loading...</h4>
         }
       </div>
-      
+
       <div>
-        <SearchPlayer />
+        <SearchPlayer players={players} setFilteredPlayers={setFilteredPlayers} />
         <NewPlayerForm />
       </div>
     </div>    
